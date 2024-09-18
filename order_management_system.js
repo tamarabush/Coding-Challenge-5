@@ -8,9 +8,6 @@ let inventory = [
 ];
 //created an array of 4 coffee product objects
 
-console.log(inventory);
-//if you cannot see the inventory in the console.log, you can see it on the HTML page
-
 
 
 //TASK 2 - Initialize orders array
@@ -19,7 +16,6 @@ let orders = [];
 //created empty array 
 
 console.log(orders);
-
 
 
 
@@ -78,5 +74,26 @@ let total = calculateOrderTotal(sampleOrder);
 console.log(total);
 
 
+
+//TASK 5 - Create a Function to Mark an Order as Completed:
+
+function completeOrder(customerName) {
+    let customerOrder = orders.find(O => O.customerName === customerName);
+    //using the find method to locate the customer name 
+
+    if(customerOrder) {
+        customerOrder.status = 'Completed';
+        console.log(`Order for ${customerName} is completed.`);
+        //if the customers order with the correct name was found
+
+     } else {
+      console.log(`ERROR: Order for ${customerName} was not found.`);
+      //if the customers order with the wrong name was not found 
+
+    }  
+};
+
+completeOrder('Lana del rey');
+completeOrder('Spongebob');
 
 
