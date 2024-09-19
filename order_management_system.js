@@ -89,11 +89,50 @@ function completeOrder(customerName) {
      } else {
       console.log(`ERROR: Order for ${customerName} was not found.`);
       //if the customers order with the wrong name was not found 
-
     }  
 };
 
 completeOrder('Lana del rey');
+//output = Order for Lana del rey is completed.
 completeOrder('Spongebob');
+//output = ERROR: Order for Spongebob was not found.
+
+
+
+//TASK 6 - Create a Function to Check Pending Orders:
+
+function checkPendingOrder(order) {
+    if (order.status === 'pending') {
+        //used an if statement to check if the order is pending or not
+        console.log(`Order for ${order.customerName}:`);
+        //if the order is pending it wil console the customers name
+        order.items.forEach(item => {
+        //use the forEach method to iterate over each order in the orders array
+        console.log(`${item.name}: ${item.quantity}`);});
+        // if the order is pending it will console the item name and how much was ordered
+        console.log(`Total: $${calculateOrderTotal(order)}`);
+        //then it will calculate the total order
+
+    } else {
+        console.log(`Order for ${order.customerName} is not pending.`);
+        //if the order is completed then it will console this ^
+    }
+};
+
+let sampleOrder2 = {
+    customerName: 'Patrick',
+    items: [{name: 'espresso', quantity: 2}],
+    status: 'pending'
+};
+//created a sample pending order 
+let sampleOrder3 ={
+    customerName: 'Marianna',
+    items: [{name: 'espresso', quantity: 1}],
+    status: 'completed'
+};
+//created a sample completed order 
+
+checkPendingOrder(sampleOrder2);
+checkPendingOrder(sampleOrder3);
 
 
