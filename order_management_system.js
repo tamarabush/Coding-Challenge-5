@@ -21,7 +21,7 @@ console.log(orders);
 
 //TASK 3 - Create a Function to Place an Order
 function placeOrder(customerName, orderedItem) {
-    let product = inventory.find(p => p.name === orderedItem.name);
+    let product = inventory.find(pro => pro.name === orderedItem.name);
     //locate the product in the inventory
 
     if (!product) {
@@ -78,7 +78,7 @@ console.log(total);
 //TASK 5 - Create a Function to Mark an Order as Completed:
 
 function completeOrder(customerName) {
-    let customerOrder = orders.find(O => O.customerName === customerName);
+    let customerOrder = orders.find(Ord => Ord.customerName === customerName);
     //using the find method to locate the customer name 
 
     if(customerOrder) {
